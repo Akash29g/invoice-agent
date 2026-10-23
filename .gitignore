@@ -7,3 +7,4 @@ seen_invoices.json
 *.jpg
 !samples/
 !samples/*.png
+repomix-output.xml
