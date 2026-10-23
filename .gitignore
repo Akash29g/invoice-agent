@@ -8,3 +8,5 @@ seen_invoices.json
 !samples/
 !samples/*.png
 repomix-output.xml
+test_models.py
+test_regions.py
