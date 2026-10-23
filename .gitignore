@@ -3,5 +3,7 @@ __pycache__/
 *.pyc
 .venv/
 invoices/
+seen_invoices.json
 *.jpg
-*.png
+!samples/
+!samples/*.png
