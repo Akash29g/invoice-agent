@@ -45,12 +45,14 @@ Bugs found by the tests:
 
 ## Run it (PowerShell)
 
+```
 pip install strands-agents boto3
-$env:MODEL_ID = “us.anthropic.claude-sonnet-4-6”
-$env:BUCKET = “your-bucket”
+$env:MODEL_ID = "us.anthropic.claude-sonnet-4-6"
+$env:BUCKET = "your-bucket"
 python before.py
 python agent.py
 python tests.py
-
+```
 
 Upload your own invoice images to `invoices/` in the bucket. Use read-only S3 permissions (`s3:GetObject`) and Bedrock invoke access only.
+
