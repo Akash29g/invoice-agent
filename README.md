@@ -1,8 +1,8 @@
-﻿# Invoice Agent: I tried to hack my own AP agent 10 ways
+﻿# Invoice Agent: I tried to hack my own AP agent 9 ways
 
 An Accounts Payable agent with one new tool that reads invoices from S3, checks the math, and can't be talked into paying. Built for the AWS Builder Center Weekend Challenge "Give your Agent a Tool".
 
-Stack: Strands Agents SDK, Amazon Bedrock (Claude Sonnet 4.6), Amazon S3, Streamlit.
+Stack: Strands Agents SDK, Amazon Bedrock (Claude Sonnet 4.6), Amazon S3, FastAPI and a single-page web UI.
 
 ## Before and after
 
@@ -42,7 +42,7 @@ The model extracts and Python decides. The model is never trusted to do the math
 
 ## Attack lab
 
-`python attack_lab.py` (or the Attack Lab page in the app) prints 10 attack invoices onto a template, uploads them to S3, and runs each through the tool 3 times. In attacks a1 to a8 the math is correct, so only the hidden-instruction defense can catch them.
+`python attack_lab.py` (or the Attack Lab tab in the web UI) prints 10 test invoices onto a template (8 hidden-instruction attacks, 1 plain fraud, 1 clean control), uploads them to S3, and runs each through the tool 3 times. In attacks a1 to a8 the math is correct, so only the hidden-instruction defense can catch them.
 
 | Attack | Technique | Expected | Result |
 |---|---|---|---|
@@ -89,7 +89,8 @@ python before.py
 python agent.py
 python tests.py
 python attack_lab.py
-streamlit run app.py
+python server.py   # opens http://127.0.0.1:8000
 
 
 `make_samples.py` generates the synthetic test invoices in `samples/`. Use read-only S3 access for the tool (`s3:GetObject`) and Bedrock invoke permissions. The attack lab also needs `s3:PutObject` on the `invoices/attacks/` and `invoices/lab/` prefixes.
+

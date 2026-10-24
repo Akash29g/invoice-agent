@@ -1,4 +1,5 @@
 ﻿strands-agents
 boto3
 pillow
-streamlit
+fastapi
+uvicorn
