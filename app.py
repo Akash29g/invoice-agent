@@ -31,7 +31,7 @@ with st.sidebar:
         if os.path.exists(SEEN):
             os.remove(SEEN)
         st.success("Cleared")
-    st.markdown("**Tests:** 53/53 passing (9 invoices x 5 runs + 8 prompt phrasings)")
+    st.markdown("**Tests:** 56/56 passing (9 invoices x 5 runs + 8 prompt phrasings + 3 honesty checks)")
 
 left, right = st.columns([1, 2])
 with left:
@@ -78,3 +78,4 @@ with right:
             st.warning(issue)
         if r.get("embedded_instructions_found"):
             st.error(f"Hidden AI instructions found and discarded: {r['embedded_instructions_found']}")
+

@@ -10,3 +10,5 @@ seen_invoices.json
 repomix-output.xml
 test_models.py
 test_regions.py
+
+repomix-output*.xml
